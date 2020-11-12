@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/style_tracing.css">
-  	<link rel="stylesheet" type="text/css" href="css/slideshow v6.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+	  <link rel="stylesheet" type="text/css" href="css/style_tracing.css">
+    <link rel="stylesheet" type="text/css" href="css/slideshow v6.css">
   	<link rel="stylesheet" type="text/css" href="css/about.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/footer v2.css">
+    <style> body {font-family: Arial, Helvetica, sans-serif;} html {scroll-behavior: smooth;} </style>
 </head>
 <body>
-
+<div id="home"></div> 
 <header class="header">
-  <a href="" class="logo"><img src="image/contact tracing icon.png"></a>
+  <a href="#" class="logo"><img src="image/contact tracing icon.png"></a>
   <input class="menu-btn" type="checkbox" id="menu-btn" />
   <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
   <ul class="menu">
-    <li><a href="#work">Home</a></li>
+    <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#careers">Login</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
+    <li><a href="#footer">Contact</a></li>
   </ul>
 </header>
 
@@ -48,7 +52,7 @@
 
 	<!-- about us -->
 
-	<div class="hero">
+	<div class="hero" id="about">
         <div class="container">
             <div class="hero__text">
                 <h1>Responsive layouts don’t have to be a struggle</h1>
@@ -57,8 +61,122 @@
             </div>
         </div>
     </div>
-
     <!-- end of about us -->
+
+    <!-- login form -->
+<div id="id01" class="modal_login">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+      <img src="image/login red.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <!--<input type="checkbox" checked="checked" name="remember"> Remember me-->
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn_login">Cancel</button>
+      <span class="psw">No Account <a onclick="document.getElementById('id02').style.display='block'" style="text-decoration: underline; color: blue; cursor: pointer;">Register Here </a></span>
+    </div>
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modallogin = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal_login) {
+        modallogin.style.display = "none";
+    }
+}
+</script>
+    <!-- end login form -->
+
+
+
+<!--registration form -->
+
+<div id="id02" class="modal_login">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+      <h2> Registration Form </h2>
+    </div>
+
+    <div class="container">
+       <label for="uname"><b>First Name</b></label>
+      <input type="text" placeholder="Enter Firstname" name="uname" required>
+
+       <label for="uname"><b>Middle Initial</b></label>
+      <input type="text" placeholder="Enter Middle Initial" name="uname" required>
+
+       <label for="uname"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter Last Name" name="uname" required>
+
+       <label for="uname"><b>Address</b></label>
+      <input type="text" placeholder="Enter Address" name="uname" required>
+
+       <label for="uname"><b>Date of Birth</b></label>
+      <input type="text" placeholder="Enter Date of Birth" name="uname" required>
+
+
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Register</button>
+      <label>
+        <!--<input type="checkbox" checked="checked" name="remember"> Remember me-->
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn_register">Cancel</button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modalRegister = document.getElementById('id012');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal_login) {
+        modalRegister.style.display = "none";
+    }
+}
+</script>
+    <!-- end registration form -->
+
+<footer id="footer">
+    <div class="wrapper_footer">
+      <small>&copy;2020 <strong>Awesome Company</strong>, All Rights Reserved</small>
+      <nav class="footer-nav">
+        <a href="#">Back to Top</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy</a>
+      </nav>
+    </div>
+  </footer>
 
 </body>
 </html>
