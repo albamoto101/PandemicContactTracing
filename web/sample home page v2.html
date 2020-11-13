@@ -8,21 +8,25 @@
   	<link rel="stylesheet" type="text/css" href="css/about.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/footer v2.css">
+    <link rel="stylesheet" type="text/css" href="css/scroll up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style> body {font-family: Arial, Helvetica, sans-serif;} html {scroll-behavior: smooth;} </style>
 </head>
 <body>
-<div id="home"></div> 
-<header class="header">
-  <a href="#" class="logo"><img src="image/contact tracing icon.png"></a>
-  <input class="menu-btn" type="checkbox" id="menu-btn" />
-  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-  <ul class="menu">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
-    <li><a href="#footer">Contact</a></li>
-  </ul>
-</header>
+
+  <div id="home"></div>
+  <header class="header">
+    <div style="width:100%; height:5px; background-color: red;"></div>
+    <a href="#home" class="logo"><img src="image/contact tracing icon.png"></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <!--<li><a href="#home">Home</a></li>-->
+      <li><a href="#about">About Contact Tracing</a></li>
+      <li><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
+      <!--<li><a href="#footer">Contact</a></li>-->
+    </ul>
+  </header>
 
 <!--- Start Slider --->
   <Section id="slider">
@@ -41,8 +45,7 @@
           <img src="image/h3.jpg" alt="slide three">
         </div>
       </div>
-<!-- End Slides -->
-                
+<!-- End Slides -->       
 <!-- Start Timeline -->
       <span class="timeline"></span>
 <!-- End Timeline -->
@@ -51,7 +54,6 @@
 	<!--- End Slider --->
 
 	<!-- about us -->
-
 	<div class="hero" id="about">
         <div class="container">
             <div class="hero__text">
@@ -60,123 +62,142 @@
                 <a href="#" class="btn">Download the app now!!!</a>
             </div>
         </div>
-    </div>
-    <!-- end of about us -->
+  </div>
+  <!-- end of about us -->
 
-    <!-- login form -->
-<div id="id01" class="modal_login">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close_login" title="Close Modal">&times;</span>
-      <img src="image/login red.png" alt="Avatar" class="avatar">
-    </div>
+  <!-- login form -->
+  <div id="id01" class="modal_login">
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+        <img src="image/login red.png" alt="Avatar" class="avatar">
+      </div>
 
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <!--<input type="checkbox" checked="checked" name="remember"> Remember me-->
-      </label>
-    </div>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+          
+        <button type="submit" id="btnlogin">Login</button>
+        <label>
+          <!--<input type="checkbox" checked="checked" name="remember"> Remember me-->
+        </label>
+      </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn_login">Cancel</button>
-      <span class="psw">No Account <a onclick="document.getElementById('id02').style.display='block'" style="text-decoration: underline; color: blue; cursor: pointer;">Register Here </a></span>
-    </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn_login">Cancel</button>
+        <span class="psw">No Account <a onclick="document.getElementById('id02').style.display='block'" style="text-decoration: underline; color: blue; cursor: pointer;">Register Here </a></span>
+      </div>
+    </form>
+  </div>
 
-  </form>
-</div>
+  <script>
+  // Get the modal
+  var modallogin = document.getElementById('id01');
 
-<script>
-// Get the modal
-var modallogin = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal_login) {
-        modallogin.style.display = "none";
-    }
-}
-</script>
-    <!-- end login form -->
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal_login) {
+          modallogin.style.display = "none";
+      }
+  }
+  </script>
+  <!-- end login form -->
 
 
 
-<!--registration form -->
+  <!--registration form -->
+  <div id="id02" class="modal_login">
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+        <h2> Registration Form </h2>
+      </div>
 
-<div id="id02" class="modal_login">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close_login" title="Close Modal">&times;</span>
-      <h2> Registration Form </h2>
-    </div>
+      <div class="container">
+        <label for="uname"><b>First Name</b></label>
+        <input type="text" placeholder="Enter Firstname" name="uname" required>
 
-    <div class="container">
-       <label for="uname"><b>First Name</b></label>
-      <input type="text" placeholder="Enter Firstname" name="uname" required>
+        <label for="uname"><b>Middle Initial</b></label>
+        <input type="text" placeholder="Enter Middle Initial" name="uname" required>
 
-       <label for="uname"><b>Middle Initial</b></label>
-      <input type="text" placeholder="Enter Middle Initial" name="uname" required>
+        <label for="uname"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="uname" required>
 
-       <label for="uname"><b>Last Name</b></label>
-      <input type="text" placeholder="Enter Last Name" name="uname" required>
+        <label for="uname"><b>Address</b></label>
+        <input type="text" placeholder="Enter Address" name="uname" required>
 
-       <label for="uname"><b>Address</b></label>
-      <input type="text" placeholder="Enter Address" name="uname" required>
+        <label for="uname"><b>Date of Birth</b></label>
+        <input type="text" placeholder="Enter Date of Birth" name="uname" required>
 
-       <label for="uname"><b>Date of Birth</b></label>
-      <input type="text" placeholder="Enter Date of Birth" name="uname" required>
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
 
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+          
+        <button type="submit" id="btnlogin">Register</button>
+        <label>
+          <!--<input type="checkbox" checked="checked" name="remember"> Remember me-->
+        </label>
+      </div>
 
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <div class="container" style="background-color:#f1f1f1">
+        <button class="cancelbtn_register" type="button" onclick="document.getElementById('id02').style.display='none'">Cancel</button>
+      </div>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Register</button>
-      <label>
-        <!--<input type="checkbox" checked="checked" name="remember"> Remember me-->
-      </label>
-    </div>
+    </form>
+  </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn_register">Cancel</button>
-    </div>
+  <script>
+  // Get the modal
+  var modalRegister = document.getElementById('id012');
 
-  </form>
-</div>
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal_login) {
+          modalRegister.style.display = "none";
+      }
+  }
+  </script>
+  <!-- end registration form -->
 
-<script>
-// Get the modal
-var modalRegister = document.getElementById('id012');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal_login) {
-        modalRegister.style.display = "none";
-    }
-}
-</script>
-    <!-- end registration form -->
-
-<footer id="footer">
-    <div class="wrapper_footer">
-      <small>&copy;2020 <strong>Awesome Company</strong>, All Rights Reserved</small>
-      <nav class="footer-nav">
-        <a href="#">Back to Top</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Privacy</a>
-      </nav>
-    </div>
+  <footer id="footer">
+      <div class="wrapper_footer">
+        <small>&copy;2020 <strong>Awesome Company</strong>, All Rights Reserved</small>
+        <nav class="footer-nav">
+          <!--<a href="#">Back to Top</a>-->
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy</a>
+        </nav>
+      </div>
   </footer>
+  <div style="width:100%; height:5px; background-color: red;"></div>
+
+  <!-- scroll up-->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> <p class="fa fa-angle-up scroll_icon"></p></button>
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <!-- scroll up end-->
 
 </body>
 </html>

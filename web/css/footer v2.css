@@ -5,7 +5,7 @@ strong {
 /* ==== SIMPLE FOOTER ==== */
 
 footer {
-  background: url('https://orange.codeberryschool.com/content/images/project-assets/simple-footer.png') repeat center;
+  background-color: #000000;
   display: table;
   width: 100vw;
   height: 8rem;
@@ -29,7 +29,7 @@ footer small {
 }
 
 .footer-nav a {
-  color: #c74f78;
+  color: #ffffff;
   text-decoration: none;
   margin: 0 .5rem;
   display: inline-block;
@@ -39,5 +39,3 @@ footer small {
   color: #f26896;
   transition: color .15s ease-in-out;
 }
-
-

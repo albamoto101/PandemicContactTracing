@@ -1,0 +1,25 @@
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #f07070;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+.scroll_icon{
+  font-size:80px; 
+  margin-bottom: 3px;
+}
